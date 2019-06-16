@@ -15,7 +15,7 @@ before_install:
   - gcloud config set compute/zone us-central1-a
   - gcloud container clusters get-credentials standard-cluster-1
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t jmahumada/reat-test -f ./client/Dockerfile.dev ./client
+  - docker build -t jmahumada/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run jmahumada/react-test npm run test -- --watchAll=false
