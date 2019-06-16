@@ -11,7 +11,6 @@ docker push jmahumada/multi_api:$SHA
 docker push jmahumada/multi_worker:$SHA
 
 kubectl apply -f k8s
-
-kubectl set image deployments/multi-client-deployment client=jmahumada/multi_client:$SHA
-kubectl set image deployments/multi-server-deployment server=jmahumada/multi_api:$SHA
-kubectl set image deployments/multi-worker-deployment worker=jmahumada/multi_worker:$SHA
+kubectl set image deployments/client-deployment client=jmahumada/multi_client:$SHA
+kubectl set image deployments/server-deployment server=jmahumada/multi_api:$SHA
+kubectl set image deployments/worker-deployment worker=jmahumada/multi_worker:$SHA
